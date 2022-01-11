@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300&family=Roboto:wght@500&family=Shrikhand&family=Syncopate:wght@400;700&family=Ubuntu+Mono:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section class="header w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark" id="navv"  style="filter: brightness(300%);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">aPoint</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#NAV">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="NAV">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <div class="containerC">
+     
+</div>
+
+<div class="badadabba">
+<div class="sregister">
+  {% for message in messages %}
+    <h3 style="color:#D3DEDC;">{{message}}</h3>
+    {% endfor %}
+    <img src="images/apointlogo.png" width="50%">
+    <p>Service-Provider</p>
+<form action="service_register" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+<input placeholder="Username" class="form-control shadow-none" name="user_name" id="uname" type="text" required/>
+  <br>
+  <input placeholder="Full Name"class="form-control shadow-none" name="full_name" id="em" type="text" required/>
+  <br>
+  <input placeholder="Password" class="form-control shadow-none" name="password" id="pw" type="password" required/>
+  <br>  
+  <div class="row">
+    <div class="col-lg-6">
+    <select placeholder="Select Service" class="form-control shadow-none" name="service" required>  
+    <option value = "barber"> Barber   
+    </option>  
+    <option value = "restaurant"> Restaurant   
+    </option>  
+    <option value = "game">Game Parlor
+    </option>  
+    <option value = "bowling alley">Bowling alley
+    </option> 
+    <option value = "cyber">Cyber Cafe
+    </option> 
+    <option value = "cafe">Café
+    </option> 
+    <option value = "clinic">Clinic
+    </option> 
+    <option value = "beauty">Beauty Salon
+    </option>
+    <option value = "bank">Bank
+    </option>  
+    </select>  
+  </div>
+  <div class="col-lg-6">
+    <input placeholder="Total Slots" class="form-control shadow-none" type="number" name="total_slots">
+  </div>
+  </div>
+    <textarea placeholder="Details" class="form-control shadow-none mt-3" name="details" type="text" row="7"></textarea>
+    <br>
+  <input placeholder="Photo" class="form-control shadow-none" name="image" id="im" type="file" accept="image/*"/>
+    <br>
+    <button class="btn btn-dark w-100" type="submit">Register</button>
+</form>
+</div>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<style>
+  
+   *{
+    margin: 0;
+    padding:0;
+  }
+  .header
+  {
+    backdrop-filter: blur(30px);
+    position: absolute;
+    z-index: 3;
+  }
+  .containerC{
+    text-align: center;
+    height: 100vh;
+    width:100%;
+    background-image:url(images/bg4.jpg);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+    filter:brightness(75%);
+    }
+  .sregister p{
+    font-size: 2rem;
+    font-family: 'Shrikhand', cursive;
+    color: #D3DEDC;
+    }
+  .sregister{
+    width: 26rem;
+    position: absolute;
+    margin: auto;
+    top:3.9rem;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(30px);
+    align-self: center;
+    align-items: center;
+    border-radius: 6%;
+  }
+  .badadabba{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  </style>

@@ -1,0 +1,13 @@
+{% if request.session.service_session %}
+<h1>Welcome sir/mam</h1>
+<form action="update_slots">
+  <input type="number" name="slots_left" value={{slots}}>
+  <button type="submit">Update</button>
+</form>
+<form action="Slogout"><button type="submit">Logout</button></form>
+{% else %}
+<form action="/" name="myform"></form>
+<script type="text/javascript">
+  document.myform.submit();
+</script>
+{% endif %}
