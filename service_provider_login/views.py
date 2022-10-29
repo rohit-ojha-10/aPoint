@@ -36,8 +36,8 @@ def service_home(request):
 def service_login(request):
     if(request.session.get('serivice_session')!=None):
         return redirect('service_home')
-    user_name=request.GET['sUname']
-    password=request.GET['sPassword']
+    user_name=request.POST['sUname']
+    password=request.POST['sPassword']
     Creds=ServiceCreds.objects.all()
     for cred in Creds:
         if(cred.user_name == user_name and cred.password == password):

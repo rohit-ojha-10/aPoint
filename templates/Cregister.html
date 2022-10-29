@@ -51,7 +51,8 @@
         <h3 style="color: #D3DEDC;">{{message}}</h3>
         {% endfor %}
       <p>Consumer</p>
-    <form action="register">
+    <form action="register" method="POST">
+      {% csrf_token %}
     <input class="form-control shadow-none" name="username" id="uname" type="text" placeholder="Username" required/>
       <br>
       <input class="form-control shadow-none" name="full_name" id="em" type="text" placeholder="Full Name" required/>

@@ -4,26 +4,20 @@ from django.shortcuts import render, redirect
 from .models import ConsumerCreds
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from django.http import HttpResponse
-
 def index(request):
     if(request.session.get('check') == None):
         request.session['check'] = 'one'
     return render(request, 'index.html')
-
-
 def Cregister(request):
     return render(request, 'Cregister.html')
-
-
 def consumer_home(request):
     return render(request, 'consumer_home.html')
     
 def register(request):
     Creds = ConsumerCreds.objects.all()
-    full_name = request.GET['full_name']
-    username = request.GET['username']
-    password = request.GET['password']
+    full_name = request.POST['full_name']
+    username = request.POST['username']
+    password = request.POST['password']
     if ConsumerCreds.objects.filter(username=username).exists():
         messages.info(request, 'Username in use')
         return redirect('Cregister')
@@ -46,8 +40,8 @@ def consumer_login(request):
 def clogin(request):
     if(request.session.get('consumer_session') != None):
         return redirect('consumer_home')
-    username = request.GET['cUsername']
-    password = request.GET['cPassword']
+    username = request.POST['cUsername']
+    password = request.POST['cPassword']
     Creds = ConsumerCreds.objects.all()
     for cred in Creds:
         if cred.username == username and cred.password == password:

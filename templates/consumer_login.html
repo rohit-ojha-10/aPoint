@@ -41,10 +41,11 @@
     <div class="Login">
           {% for message in messages %}
           <h3 style="color: #D3DEDC;">{{message}}</h3>
-          {% endfor %}
+          {% endfor %} 
           <img src="images/apointlogo.png" width="50%">
           <p>Consumer</p>
-          <form class="Loginforms" action="clogin">
+          <form class="Loginforms" action="clogin" method="POST">
+             {% csrf_token %}
             <div class="mb-4 col-12" >
               <input
                 class="form-control shadow-none"

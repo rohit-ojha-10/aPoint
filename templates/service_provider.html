@@ -14,12 +14,24 @@
         <div class="card-body">
           <h5 class="card-title">{{info.full_name}}</h5>
           <p class="card-text">Slots Left={{info.total_slots}}</p>
-          <p class="card-text">{{info.details}}</p> 
+          <p class="card-text longtext">{{info.details}}</p> 
+          <a href="#" class="textlong" id="texts">LONG</a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
+  <script type="text/javascript">
+    var x=document.getElementsByClassName("longtext");
+    var y=document.getElementsByClassName("longtext");
+    var constant=document.getElementsById("texts");
+    for(i=0;i<x.length;i++)
+    {
+      x[i].textContent=x[i].textContent.slice(0,50)+".....";
+    }
+    constant.addevent
+    
+    </script>
   </body>
 </html>
 <style>

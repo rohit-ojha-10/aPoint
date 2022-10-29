@@ -45,7 +45,8 @@
           {% endfor %}
           <img src="images/apointlogo.png" width="50%">
           <p>Service-Provider</p>
-            <form action="service_login">
+            <form action="service_login" method="POST">
+             {% csrf_token %}
               <div class="mb-4" >
                 <input
                   class="form-control shadow-none"
