@@ -1,1 +1,1 @@
-web gunicorn apoint.wsgi:application --log-file -
+web: gunicorn apoint.wsgi
