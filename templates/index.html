@@ -72,7 +72,7 @@
         <div class="welcome">
           <img src="images/apointlogo.png" width="80%">
         <p>Are you a consumer or service-provider?</p>
-        <div>
+        <div class = "btnbox">
         <a href="select?name=consumer" class="btn btn-dark cbtn">Consumer</a>
         <a href="select?name=service" class="btn btn-dark">Service-Provider</a>
         </div>
@@ -101,10 +101,6 @@
       text-align: center;
       margin: 30px 0 50px 0;
       color: rgb(195, 200, 205);
-    }
-    .cbtn
-    {
-      padding:6px 25px;
     }
     .header
     {
@@ -135,6 +131,11 @@
         border-radius: 2rem;
         transition: 0.4s;
        
+      }
+      .btnbox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
       .welcome:hover{
         box-shadow: 0px 0px 12px 5px rgba(253, 253, 253, 0.2);
